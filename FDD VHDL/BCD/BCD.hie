@@ -1,0 +1,2 @@
+BCD.vhd #Entity bcd 4
+BCD.vhd #Architecture abcd bcd 13
