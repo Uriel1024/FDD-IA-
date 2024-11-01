@@ -1,2 +1,2 @@
-BCD.vhd #Entity bcd 4
-BCD.vhd #Architecture abcd bcd 13
+BCD.vhd #Entity bcd 5
+BCD.vhd #Architecture abcd bcd 21

@@ -1,12 +1,20 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+
 entity bcd is
-	port( 
-		a,b,c,d : in std_logic; 
-		f,g,h,i,j,k,l : out std_logic
+    PORT (
+        A, B, C, D : IN std_logic;   -- Entradas
+        F, G, H, I, J, K, L : OUT std_logic  -- Salida
 	);
-end bcd; 
+
+	attribute pin_numbers of bcd: entity is
+	"A:4 B:3 C:2 D:1 F:14 G:15 H:16 I:17 J:18 K:19 L:20 ";
+
+    
+END bcd;
+
+ 
 
 
 
