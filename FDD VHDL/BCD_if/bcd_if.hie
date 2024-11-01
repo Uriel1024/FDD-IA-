@@ -1,0 +1,2 @@
+bcd_if.vhd #Entity bcd 5
+bcd_if.vhd #Architecture abcd bcd 17
