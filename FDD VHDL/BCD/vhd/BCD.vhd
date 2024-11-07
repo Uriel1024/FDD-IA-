@@ -6,7 +6,7 @@
 
 --    VHDL File: BCD.vhd
 
---    Date: Thu Nov 07 11:20:25 2024
+--    Date: Thu Nov 07 11:26:39 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -348,7 +348,8 @@ jed_sum_19<= (((jed_node1) and (jed_node2) and not(jed_node4)) or
 
 jed_oept_20<=(one);
 
-jed_sum_20<= (((jed_node1) and (jed_node2) and not(jed_node4)) or
+jed_sum_20<= (((jed_node1) and (jed_node2) and (jed_node3) and not(jed_node4)
+) or
 (not(jed_node2) and not(jed_node3) and not(jed_node4)
 ));
 
