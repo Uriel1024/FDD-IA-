@@ -8,9 +8,6 @@ entity display is
         F, G, H, I, J, K, L : OUT std_logic  -- Salida
 	);
 
-	attribute pin_numbers of display: entity is
-	"A:4 B:3 C:2 D:1 F:14 G:15 H:16 I:17 J:18 K:19 L:20 ";
-
     
 END display;
 

@@ -1,2 +1,2 @@
 Display.vhd #Entity display 5
-Display.vhd #Architecture adisplay display 22
+Display.vhd #Architecture adisplay display 19
