@@ -6,7 +6,7 @@
 
 --    VHDL File: BCD.vhd
 
---    Date: Thu Nov 07 11:01:35 2024
+--    Date: Thu Nov 07 11:06:05 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -312,7 +312,10 @@ jed_node25<=jed_sum_25;
 jed_node26<=jed_sum_26;
 jed_oept_14<=(one);
 
-jed_sum_14<= ((not(jed_node1) and not(jed_node2) and (jed_node3)));
+jed_sum_14<= (((jed_node1) and not(jed_node2) and not(jed_node3) and not(jed_node4)
+) or
+(not(jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
+));
 
 jed_oept_15<=(one);
 
@@ -321,16 +324,16 @@ jed_sum_15<= (((jed_node1) and not(jed_node2) and (jed_node3)) or
 
 jed_oept_16<=(one);
 
-jed_sum_16<= ((not(jed_node1) and (jed_node2) and (jed_node3)) or
-(not(jed_node1) and (jed_node2) and not(jed_node4)));
+jed_sum_16<= ((not(jed_node1) and not(jed_node2) and not(jed_node3)
+));
 
 jed_oept_17<=(one);
 
-jed_sum_17<= (((jed_node1) and (jed_node2) and (jed_node3) and not(jed_node4)
-) or
-((jed_node1) and not(jed_node2) and not(jed_node3) and not(jed_node4)
+jed_sum_17<= (((jed_node1) and not(jed_node2) and not(jed_node3) and not(jed_node4)
 ) or
 (not(jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
+) or
+((jed_node1) and (jed_node2) and (jed_node3) and not(jed_node4)
 ));
 
 jed_oept_18<=(one);
