@@ -8,7 +8,7 @@ entity bcd is
 		DIS : out std_logic_vector(6 downto 0)
 	);
 	attribute pin_numbers of bcd: entity is 
-	" E(0):4 E(1):3 E(2):2 E(3):1" 
+	" E(0):1 E(1):2 E(2):3 E(3):4" 
 	& " DIS(0):20 DIS(1):19 DIS(2):18 DIS(3):17 DIS(4):16 " 
     & " DIS(5):15 DIS(6):14";
 END bcd;
