@@ -6,7 +6,7 @@
 
 --    VHDL File: bcd_if.vhd
 
---    Date: Tue Nov 05 06:33:04 2024
+--    Date: Thu Nov 07 10:30:01 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -67,15 +67,15 @@ SIGNAL  jed_oept_4:std_logic:='0';
 
 SIGNAL  jed_oept_14:std_logic:='0';
 SIGNAL  jed_sum_14,jed_fb_14:std_logic:='0';
---Attribute PIN_NUMBERS of dis(0):SIGNAL is "0014";
+--Attribute PIN_NUMBERS of dis(6):SIGNAL is "0014";
 
 SIGNAL  jed_oept_15:std_logic:='0';
 SIGNAL  jed_sum_15,jed_fb_15:std_logic:='0';
---Attribute PIN_NUMBERS of dis(1):SIGNAL is "0015";
+--Attribute PIN_NUMBERS of dis(5):SIGNAL is "0015";
 
 SIGNAL  jed_oept_16:std_logic:='0';
 SIGNAL  jed_sum_16,jed_fb_16:std_logic:='0';
---Attribute PIN_NUMBERS of dis(2):SIGNAL is "0016";
+--Attribute PIN_NUMBERS of dis(4):SIGNAL is "0016";
 
 SIGNAL  jed_oept_17:std_logic:='0';
 SIGNAL  jed_sum_17,jed_fb_17:std_logic:='0';
@@ -83,15 +83,15 @@ SIGNAL  jed_sum_17,jed_fb_17:std_logic:='0';
 
 SIGNAL  jed_oept_18:std_logic:='0';
 SIGNAL  jed_sum_18,jed_fb_18:std_logic:='0';
---Attribute PIN_NUMBERS of dis(4):SIGNAL is "0018";
+--Attribute PIN_NUMBERS of dis(2):SIGNAL is "0018";
 
 SIGNAL  jed_oept_19:std_logic:='0';
 SIGNAL  jed_sum_19,jed_fb_19:std_logic:='0';
---Attribute PIN_NUMBERS of dis(5):SIGNAL is "0019";
+--Attribute PIN_NUMBERS of dis(1):SIGNAL is "0019";
 
 SIGNAL  jed_oept_20:std_logic:='0';
 SIGNAL  jed_sum_20,jed_fb_20:std_logic:='0';
---Attribute PIN_NUMBERS of dis(6):SIGNAL is "0020";
+--Attribute PIN_NUMBERS of dis(0):SIGNAL is "0020";
 
 SIGNAL  jed_oept_25:std_logic:='0';
 SIGNAL  jed_node25,jed_sum_25:std_logic:='0';
@@ -127,7 +127,7 @@ port map(
      oe=>jed_oept_14,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>dis(0),
+     y=>dis(6),
      fb=>jed_fb_14
    );
 
@@ -155,7 +155,7 @@ port map(
      oe=>jed_oept_15,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>dis(1),
+     y=>dis(5),
      fb=>jed_fb_15
    );
 
@@ -183,7 +183,7 @@ port map(
      oe=>jed_oept_16,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>dis(2),
+     y=>dis(4),
      fb=>jed_fb_16
    );
 
@@ -239,7 +239,7 @@ port map(
      oe=>jed_oept_18,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>dis(4),
+     y=>dis(2),
      fb=>jed_fb_18
    );
 
@@ -267,7 +267,7 @@ port map(
      oe=>jed_oept_19,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>dis(5),
+     y=>dis(1),
      fb=>jed_fb_19
    );
 
@@ -295,7 +295,7 @@ port map(
      oe=>jed_oept_20,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>dis(6),
+     y=>dis(0),
      fb=>jed_fb_20
    );
 
@@ -304,23 +304,24 @@ jed_node26<=jed_sum_26;
 jed_oept_14<=(one);
 
 jed_sum_14<= (((jed_node1) and not(jed_node2) and not(jed_node3)) or
-(not(jed_node1) and (jed_node2) and not(jed_node4)) or
-(not(jed_node1) and (jed_node2) and not(jed_node3)) or
-(not(jed_node1) and not(jed_node2) and (jed_node3)));
+(not(jed_node1) and (jed_node2) and (jed_node4)) or
+(not(jed_node1) and not(jed_node2) and not(jed_node4)
+) or
+(not(jed_node1) and (jed_node3)));
 
 jed_oept_15<=(one);
 
-jed_sum_15<= (((jed_node1) and not(jed_node2) and not(jed_node3)) or
-(not(jed_node1) and (jed_node2) and not(jed_node4)) or
-(not(jed_node1) and (jed_node2) and not(jed_node3)) or
+jed_sum_15<= ((not(jed_node1) and (jed_node3) and (jed_node4)) or
 (not(jed_node1) and not(jed_node3) and not(jed_node4)
-));
+) or
+(not(jed_node2) and not(jed_node3)) or
+(not(jed_node1) and not(jed_node2)));
 
 jed_oept_16<=(one);
 
-jed_sum_16<= ((not(jed_node2) and not(jed_node3) and not(jed_node4)
-) or
-(not(jed_node1) and (jed_node3) and not(jed_node4)));
+jed_sum_16<= ((not(jed_node2) and not(jed_node3)) or
+(not(jed_node1) and (jed_node2)) or
+(not(jed_node1) and (jed_node4)));
 
 jed_oept_17<=(one);
 
@@ -334,24 +335,23 @@ jed_sum_17<= ((not(jed_node1) and (jed_node2) and not(jed_node3) and (jed_node4)
 
 jed_oept_18<=(one);
 
-jed_sum_18<= ((not(jed_node2) and not(jed_node3)) or
-(not(jed_node1) and (jed_node2)) or
-(not(jed_node1) and (jed_node4)));
+jed_sum_18<= ((not(jed_node2) and not(jed_node3) and not(jed_node4)
+) or
+(not(jed_node1) and (jed_node3) and not(jed_node4)));
 
 jed_oept_19<=(one);
 
-jed_sum_19<= ((not(jed_node1) and (jed_node3) and (jed_node4)) or
+jed_sum_19<= (((jed_node1) and not(jed_node2) and not(jed_node3)) or
+(not(jed_node1) and (jed_node2) and not(jed_node4)) or
+(not(jed_node1) and (jed_node2) and not(jed_node3)) or
 (not(jed_node1) and not(jed_node3) and not(jed_node4)
-) or
-(not(jed_node2) and not(jed_node3)) or
-(not(jed_node1) and not(jed_node2)));
+));
 
 jed_oept_20<=(one);
 
 jed_sum_20<= (((jed_node1) and not(jed_node2) and not(jed_node3)) or
-(not(jed_node1) and (jed_node2) and (jed_node4)) or
-(not(jed_node1) and not(jed_node2) and not(jed_node4)
-) or
-(not(jed_node1) and (jed_node3)));
+(not(jed_node1) and (jed_node2) and not(jed_node4)) or
+(not(jed_node1) and (jed_node2) and not(jed_node3)) or
+(not(jed_node1) and not(jed_node2) and (jed_node3)));
 
 end DSMB;
