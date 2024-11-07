@@ -22,9 +22,9 @@ END bcd;
  begin 
  	f <= (c or a or (b and d) or (not b and not d));
 	g <= not b or (not c and not d) or (c and d);
-	h <= c or d or b;
+	h <= not c or d or b;
 	i <= (not b and c) or a or (not b and not d) or (c and not d) or (b and not c and d);
 	j <= (not b and not d) or (c and not d);
 	k <= (not c and not d) or a or (b and not c) or (b and not d);
-	l <= ((c and (not d)) or (b and not c) or (not b and c ) or a );
+	l <= ((c and not d) or (b and not c) or (b and not c) or a);
 end abcd; 
