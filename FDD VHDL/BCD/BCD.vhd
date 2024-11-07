@@ -20,11 +20,11 @@ END bcd;
 
  architecture abcd of bcd is  
  begin 
- 	f <= c or a or (b and d) or (not b and not d); 
+ 	f <= (d or c or (not b));
 	g <= not b or (not c and not d) or (c and d);
 	h <= not c or d or (a and not b);
 	i <= (not b and c) or a or (not b and not d) or (c and not d) or (b and not c and d);
 	j <= (not b and not d) or (c and not d);
 	k <= (not c and not d) or a or (b and not c) or (b and not d);
-	l <= a or (c and not c) or (b and not c) or (not b and c);
+	l <= ((c and (not d)) or (b and not c) or (not b and c ) or a );
 end abcd; 
