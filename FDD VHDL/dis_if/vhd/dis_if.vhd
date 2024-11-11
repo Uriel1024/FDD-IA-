@@ -6,7 +6,7 @@
 
 --    VHDL File: dis_if.vhd
 
---    Date: Fri Nov 08 15:40:56 2024
+--    Date: Mon Nov 11 10:37:01 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -349,11 +349,11 @@ jed_sum_17<= ((not(jed_node1) and (jed_node2) and not(jed_node3) and (jed_node4)
 
 jed_oept_18<=(one);
 
-jed_sum_18<= ((not(jed_node1) and not(jed_node2) and not(jed_node3)
+jed_sum_18<= (((jed_node2) and (jed_node4) and not(jed_node5)) or
+(not(jed_node1) and not(jed_node2) and not(jed_node3)
 ) or
 (not(jed_node1) and (jed_node2) and not(jed_node4)) or
-((jed_node3) and (jed_node4) and not(jed_node5)) or
-((jed_node2) and (jed_node4) and not(jed_node5)));
+((jed_node3) and (jed_node4) and not(jed_node5)));
 
 jed_oept_19<=(one);
 
@@ -369,11 +369,9 @@ jed_sum_19<= ((not(jed_node2) and not(jed_node3) and (jed_node4)) or
 jed_oept_20<=(one);
 
 jed_sum_20<= ((not(jed_node1) and not(jed_node2) and (jed_node3) and (jed_node4)
-) or
+ and not(jed_node5)) or
 ((jed_node1) and (jed_node2) and (jed_node3) and not(jed_node4)
 ) or
-((jed_node3) and (jed_node4) and (jed_node5)) or
-((jed_node2) and (jed_node4) and (jed_node5)) or
 (not(jed_node2) and not(jed_node3) and not(jed_node4)
 ));
 

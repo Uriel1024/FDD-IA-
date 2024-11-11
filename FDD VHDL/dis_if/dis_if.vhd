@@ -45,7 +45,7 @@ begin
 			when "10111" => DIS<="1110000"; --7
 			when "11000" => DIS<="1111111"; --8
 			when "11001" => DIS<="1111011"; --9
-			when others => DIS<="0000000" ; --void
+			when others => DIS<="0000001" ; --void
 			end case;
 
 		end process pdisplay;
