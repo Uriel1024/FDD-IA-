@@ -17,7 +17,7 @@ Options:    -m -yu -e10 -w100 -o2 -ygs -fP -v10 -dc22v10 -ppalce22v10-25pc/pi -b
 ======================================================================
 
 vhdlfe V6.3 IR 35:  VHDL parser
-Thu Nov 07 10:47:44 2024
+Fri Nov 08 15:40:54 2024
 
 Library 'work' => directory 'lc22v10'
 Linking 'C:\Program Files (x86)\Cypress\Warp\bin\std.vhd'.
@@ -30,7 +30,7 @@ vhdlfe:  No errors.
 
 
 tovif V6.3 IR 35:  High-level synthesis
-Thu Nov 07 10:47:44 2024
+Fri Nov 08 15:40:54 2024
 
 Linking 'C:\Program Files (x86)\Cypress\Warp\bin\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\Warp\lib\common\cypress.vhd'.
@@ -41,7 +41,7 @@ tovif:  No errors.
 
 
 topld V6.3 IR 35:  Synthesis and optimization
-Thu Nov 07 10:47:44 2024
+Fri Nov 08 15:40:54 2024
 
 Linking 'C:\Program Files (x86)\Cypress\Warp\bin\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\Warp\lib\common\cypress.vhd'.
@@ -73,14 +73,14 @@ Circuit simplification results:
 	Turned 0 signals into soft nodes.
 	Maximum default expansion cost was set at 10.
 ----------------------------------------------------------
-Created 11 PLD nodes.
+Created 12 PLD nodes.
 
 topld:  No errors.
 
 ----------------------------------------------------------------------------
 PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-DESIGN HEADER INFORMATION  (10:47:45)
+DESIGN HEADER INFORMATION  (15:40:55)
 
 Input File(s): dis_if.pla
 Device       : C22V10
@@ -99,7 +99,7 @@ Completed Successfully
 ----------------------------------------------------------------------------
 PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-OPTIMIZATION OPTIONS       (10:47:45)
+OPTIMIZATION OPTIONS       (15:40:55)
 
 Messages:
   Information: Optimizing logic using best output polarity for signals:
@@ -126,7 +126,7 @@ Completed Successfully
 ----------------------------------------------------------------------------
 PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-OPTIMIZATION OPTIONS       (10:47:45)
+OPTIMIZATION OPTIONS       (15:40:56)
 
 Messages:
   Information: Optimizing Banked Preset/Reset requirements.
@@ -140,54 +140,67 @@ Completed Successfully
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
 <CYPRESSTAG name="Equations" icon=FILE_RPT_EQUATION>
-DESIGN EQUATIONS           (10:47:45)
+DESIGN EQUATIONS           (15:40:56)
 </CYPRESSTAG>
 
     /dis(0) =
           /e(0) * /e(1) * e(2) * e(3) 
         + e(0) * e(1) * e(2) * /e(3) 
+        + e(2) * e(3) * e(4) 
+        + e(1) * e(3) * e(4) 
         + /e(1) * /e(2) * /e(3) 
 
-    /dis(1) =
-          e(0) * /e(1) * e(2) * e(3) 
-        + e(0) * e(1) * /e(3) 
-        + e(1) * /e(2) * /e(3) 
-        + e(0) * /e(2) * /e(3) 
-
-    /dis(2) =
-          e(0) * /e(1) * /e(2) 
+    dis(1) =
+          /e(1) * /e(2) * e(3) 
+        + /e(0) * e(2) * /e(3) 
         + /e(1) * e(2) * /e(3) 
-        + e(0) * /e(3) 
+        + /e(0) * /e(1) * /e(3) 
+        + e(1) * e(3) * /e(4) 
+        + /e(0) * /e(1) * /e(4) 
+
+    dis(2) =
+          /e(0) * /e(1) * /e(2) 
+        + /e(0) * e(1) * /e(3) 
+        + e(2) * e(3) * /e(4) 
+        + e(1) * e(3) * /e(4) 
 
     /dis(3) =
           /e(0) * e(1) * /e(2) * e(3) 
         + /e(0) * /e(1) * e(2) * /e(3) 
         + e(0) * /e(1) * /e(2) * /e(3) 
+        + e(2) * e(3) * e(4) 
+        + e(1) * e(3) * e(4) 
         + e(0) * e(1) * e(2) 
 
-    /dis(4) =
-          /e(0) * e(1) * /e(2) * /e(3) 
-        + e(1) * e(2) * e(3) 
-        + /e(0) * e(2) * e(3) 
+    dis(4) =
+          e(0) * /e(1) * /e(4) 
+        + /e(2) * e(3) * /e(4) 
+        + /e(1) * /e(2) 
+        + e(2) * /e(3) 
+        + e(0) * /e(3) 
 
-    /dis(5) =
-          e(0) * /e(1) * e(2) * /e(3) 
-        + /e(0) * e(2) * e(3) 
-        + e(0) * e(1) * e(3) 
-        + /e(0) * e(1) * e(2) 
+    dis(5) =
+          e(0) * /e(1) * e(3) * /e(4) 
+        + e(0) * e(1) * /e(3) 
+        + /e(0) * /e(1) * /e(3) 
+        + /e(0) * /e(2) * /e(4) 
+        + /e(1) * /e(2) 
+        + /e(2) * /e(3) 
 
-    /dis(6) =
-          e(0) * /e(1) * e(2) * e(3) 
-        + e(0) * e(1) * /e(2) * e(3) 
-        + /e(0) * /e(1) * e(2) * /e(3) 
-        + e(0) * /e(1) * /e(2) * /e(3) 
+    dis(6) =
+          /e(1) * /e(2) * e(3) 
+        + e(0) * e(2) * /e(3) 
+        + /e(0) * /e(2) * /e(3) 
+        + e(1) * e(2) * /e(4) 
+        + /e(0) * e(3) * /e(4) 
+        + e(1) * /e(3) 
 
 
 Completed Successfully  
 ----------------------------------------------------------------------------
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-DESIGN RULE CHECK          (10:47:45)
+DESIGN RULE CHECK          (15:40:56)
 
 Messages:
                  None.
@@ -201,7 +214,7 @@ Completed Successfully
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
 <CYPRESSTAG name="Pinout" icon=FILE_RPT_PINOUT>
-PINOUT INFORMATION   (10:47:45)
+PINOUT INFORMATION   (15:40:56)
 </CYPRESSTAG>
 Messages:
   Information: All signals pre-placed in user design.
@@ -213,7 +226,7 @@ Messages:
            e(1) =| 2|                                  |23|* not used       
            e(2) =| 3|                                  |22|* not used       
            e(3) =| 4|                                  |21|* not used       
-       not used *| 5|                                  |20|= dis(0)         
+           e(4) =| 5|                                  |20|= dis(0)         
        not used *| 6|                                  |19|= dis(1)         
        not used *| 7|                                  |18|= dis(2)         
        not used *| 8|                                  |17|= dis(3)         
@@ -233,54 +246,54 @@ Completed Successfully
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
 <CYPRESSTAG name="Utilization" icon=FILE_RPT_UTILIZATION>
-RESOURCE UTILIZATION (10:47:45)
+RESOURCE UTILIZATION (15:40:56)
 </CYPRESSTAG>
   Information: Macrocell Utilization.
 
                      Description        Used     Max
                  ______________________________________
-                 | Dedicated Inputs   |    3  |   11  |
+                 | Dedicated Inputs   |    4  |   11  |
                  | Clock/Inputs       |    1  |    1  |
                  | I/O Macrocells     |    7  |   10  |
                  ______________________________________
-                                          11  /   22   = 50  %
+                                          12  /   22   = 54  %
 
 
   Information: Output Logic Product Term Utilization.
 
                   Node#  Output Signal Name  Used   Max
                  ________________________________________
-                 | 14  |  dis(6)          |   4  |   8  |
-                 | 15  |  dis(5)          |   4  |  10  |
-                 | 16  |  dis(4)          |   3  |  12  |
-                 | 17  |  dis(3)          |   4  |  14  |
-                 | 18  |  dis(2)          |   3  |  16  |
-                 | 19  |  dis(1)          |   4  |  16  |
-                 | 20  |  dis(0)          |   3  |  14  |
+                 | 14  |  dis(6)          |   6  |   8  |
+                 | 15  |  dis(5)          |   6  |  10  |
+                 | 16  |  dis(4)          |   5  |  12  |
+                 | 17  |  dis(3)          |   6  |  14  |
+                 | 18  |  dis(2)          |   4  |  16  |
+                 | 19  |  dis(1)          |   6  |  16  |
+                 | 20  |  dis(0)          |   5  |  14  |
                  | 21  |  Unused          |   0  |  12  |
                  | 22  |  Unused          |   0  |  10  |
                  | 23  |  Unused          |   0  |   8  |
                  | 25  |  Unused          |   0  |   1  |
                  ________________________________________
-                                             25  / 121   = 20  %
+                                             38  / 121   = 31  %
 
 
 Completed Successfully  
 ----------------------------------------------------------------------------
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-JEDEC ASSEMBLE             (10:47:45)
+JEDEC ASSEMBLE             (15:40:56)
 
 Messages:
   Information: Output file 'dis_if.pin' created.
   Information: Output file 'dis_if.jed' created.
 
   Usercode:    
-  Checksum:    ACDB
+  Checksum:    F1E8
 
 
 
 Summary:
                  Error Count = 0      Warning Count = 0
 
-Completed Successfully at 10:47:45
+Completed Successfully at 15:40:56

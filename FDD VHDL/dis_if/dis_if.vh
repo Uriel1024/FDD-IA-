@@ -3,5 +3,5 @@ module display (
 	dis
 	) ;
 
-input [3:0] e;
+input [4:0] e;
 inout [6:0] dis;
