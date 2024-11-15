@@ -6,7 +6,7 @@
 
 --    VHDL File: Display.vhd
 
---    Date: Thu Nov 07 09:18:25 2024
+--    Date: Fri Nov 15 06:28:10 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -22,17 +22,8 @@ use primitive.primitive.all;
 
 ENTITY display IS
     PORT (
-	                   a :    in std_logic ;
-	                   b :    in std_logic ;
-	                   c :    in std_logic ;
-	                   d :    in std_logic ;
-	                   f : inout std_logic ;
-	                   g : inout std_logic ;
-	                   h : inout std_logic ;
-	                   i : inout std_logic ;
-	                   j : inout std_logic ;
-	                   k : inout std_logic ;
-	                   l : inout std_logic
+	                   e :    in std_logic_vector (3 downto 0) ;
+	                 dis : inout std_logic_vector (6 downto 0)
     );
 END display;
 
@@ -40,10 +31,10 @@ END display;
 
 ARCHITECTURE DSMB of display is
 
-	signal jed_node1	: std_logic:='0' ; -- d
-	signal jed_node2	: std_logic:='0' ; -- c
-	signal jed_node3	: std_logic:='0' ; -- b
-	signal jed_node4	: std_logic:='0' ; -- a
+	signal jed_node1	: std_logic:='0' ; -- e(0)
+	signal jed_node2	: std_logic:='0' ; -- e(1)
+	signal jed_node3	: std_logic:='0' ; -- e(2)
+	signal jed_node4	: std_logic:='0' ; -- e(3)
 	signal jed_node5	: std_logic:='0' ;
 	signal jed_node6	: std_logic:='0' ;
 	signal jed_node7	: std_logic:='0' ;
@@ -53,9 +44,9 @@ ARCHITECTURE DSMB of display is
 	signal jed_node11	: std_logic:='0' ;
 	signal jed_node12	: std_logic:='0' ;
 	signal jed_node13	: std_logic:='0' ;
-	signal jed_node18	: std_logic:='0' ;
-	signal jed_node19	: std_logic:='0' ;
-	signal jed_node20	: std_logic:='0' ;
+	signal jed_node21	: std_logic:='0' ;
+	signal jed_node22	: std_logic:='0' ;
+	signal jed_node23	: std_logic:='0' ;
 	signal jed_node24	: std_logic:='0' ;
 
 	for all: c22v10m use entity primitive.c22v10m (sim);
@@ -63,44 +54,44 @@ ARCHITECTURE DSMB of display is
 SIGNAL  one:std_logic:='1';
 SIGNAL  zero:std_logic:='0';
 SIGNAL  jed_oept_1:std_logic:='0';
---Attribute PIN_NUMBERS of d:SIGNAL is "0001";
+--Attribute PIN_NUMBERS of e(0):SIGNAL is "0001";
 
 SIGNAL  jed_oept_2:std_logic:='0';
---Attribute PIN_NUMBERS of c:SIGNAL is "0002";
+--Attribute PIN_NUMBERS of e(1):SIGNAL is "0002";
 
 SIGNAL  jed_oept_3:std_logic:='0';
---Attribute PIN_NUMBERS of b:SIGNAL is "0003";
+--Attribute PIN_NUMBERS of e(2):SIGNAL is "0003";
 
 SIGNAL  jed_oept_4:std_logic:='0';
---Attribute PIN_NUMBERS of a:SIGNAL is "0004";
+--Attribute PIN_NUMBERS of e(3):SIGNAL is "0004";
 
 SIGNAL  jed_oept_14:std_logic:='0';
 SIGNAL  jed_sum_14,jed_fb_14:std_logic:='0';
---Attribute PIN_NUMBERS of k:SIGNAL is "0014";
+--Attribute PIN_NUMBERS of dis(6):SIGNAL is "0014";
 
 SIGNAL  jed_oept_15:std_logic:='0';
 SIGNAL  jed_sum_15,jed_fb_15:std_logic:='0';
---Attribute PIN_NUMBERS of l:SIGNAL is "0015";
+--Attribute PIN_NUMBERS of dis(5):SIGNAL is "0015";
 
 SIGNAL  jed_oept_16:std_logic:='0';
 SIGNAL  jed_sum_16,jed_fb_16:std_logic:='0';
---Attribute PIN_NUMBERS of i:SIGNAL is "0016";
+--Attribute PIN_NUMBERS of dis(4):SIGNAL is "0016";
 
 SIGNAL  jed_oept_17:std_logic:='0';
 SIGNAL  jed_sum_17,jed_fb_17:std_logic:='0';
---Attribute PIN_NUMBERS of f:SIGNAL is "0017";
+--Attribute PIN_NUMBERS of dis(3):SIGNAL is "0017";
 
-SIGNAL  jed_oept_21:std_logic:='0';
-SIGNAL  jed_sum_21,jed_fb_21:std_logic:='0';
---Attribute PIN_NUMBERS of h:SIGNAL is "0021";
+SIGNAL  jed_oept_18:std_logic:='0';
+SIGNAL  jed_sum_18,jed_fb_18:std_logic:='0';
+--Attribute PIN_NUMBERS of dis(2):SIGNAL is "0018";
 
-SIGNAL  jed_oept_22:std_logic:='0';
-SIGNAL  jed_sum_22,jed_fb_22:std_logic:='0';
---Attribute PIN_NUMBERS of j:SIGNAL is "0022";
+SIGNAL  jed_oept_19:std_logic:='0';
+SIGNAL  jed_sum_19,jed_fb_19:std_logic:='0';
+--Attribute PIN_NUMBERS of dis(1):SIGNAL is "0019";
 
-SIGNAL  jed_oept_23:std_logic:='0';
-SIGNAL  jed_sum_23,jed_fb_23:std_logic:='0';
---Attribute PIN_NUMBERS of g:SIGNAL is "0023";
+SIGNAL  jed_oept_20:std_logic:='0';
+SIGNAL  jed_sum_20,jed_fb_20:std_logic:='0';
+--Attribute PIN_NUMBERS of dis(0):SIGNAL is "0020";
 
 SIGNAL  jed_oept_25:std_logic:='0';
 SIGNAL  jed_node25,jed_sum_25:std_logic:='0';
@@ -108,10 +99,10 @@ SIGNAL  jed_oept_26:std_logic:='0';
 SIGNAL  jed_node26,jed_sum_26:std_logic:='0';
 
 BEGIN
-jed_node1 <= d ;
-jed_node2 <= c ;
-jed_node3 <= b ;
-jed_node4 <= a ;
+jed_node1 <= e(0) ;
+jed_node2 <= e(1) ;
+jed_node3 <= e(2) ;
+jed_node4 <= e(3) ;
 Mcell_14:c22v10m
 generic map(comb,
    invt,
@@ -136,7 +127,7 @@ port map(
      oe=>jed_oept_14,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>k,
+     y=>dis(6),
      fb=>jed_fb_14
    );
 
@@ -164,13 +155,13 @@ port map(
      oe=>jed_oept_15,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>l,
+     y=>dis(5),
      fb=>jed_fb_15
    );
 
 Mcell_16:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -192,7 +183,7 @@ port map(
      oe=>jed_oept_16,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>i,
+     y=>dis(4),
      fb=>jed_fb_16
    );
 
@@ -220,11 +211,11 @@ port map(
      oe=>jed_oept_17,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>f,
+     y=>dis(3),
      fb=>jed_fb_17
    );
 
-Mcell_21:c22v10m
+Mcell_18:c22v10m
 generic map(comb,
    invt,
    xpin,
@@ -243,16 +234,16 @@ generic map(comb,
 	25 ns  --tspr
 )
 port map(
-     d=>jed_sum_21,
+     d=>jed_sum_18,
      clk=>jed_node1,
-     oe=>jed_oept_21,
+     oe=>jed_oept_18,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>h,
-     fb=>jed_fb_21
+     y=>dis(2),
+     fb=>jed_fb_18
    );
 
-Mcell_22:c22v10m
+Mcell_19:c22v10m
 generic map(comb,
    invt,
    xpin,
@@ -271,16 +262,16 @@ generic map(comb,
 	25 ns  --tspr
 )
 port map(
-     d=>jed_sum_22,
+     d=>jed_sum_19,
      clk=>jed_node1,
-     oe=>jed_oept_22,
+     oe=>jed_oept_19,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>j,
-     fb=>jed_fb_22
+     y=>dis(1),
+     fb=>jed_fb_19
    );
 
-Mcell_23:c22v10m
+Mcell_20:c22v10m
 generic map(comb,
    invt,
    xpin,
@@ -299,13 +290,13 @@ generic map(comb,
 	25 ns  --tspr
 )
 port map(
-     d=>jed_sum_23,
+     d=>jed_sum_20,
      clk=>jed_node1,
-     oe=>jed_oept_23,
+     oe=>jed_oept_20,
      ss=>jed_sum_26,
      ar=>jed_sum_25,
-     y=>g,
-     fb=>jed_fb_23
+     y=>dis(0),
+     fb=>jed_fb_20
    );
 
 jed_node25<=jed_sum_25;
@@ -314,55 +305,59 @@ jed_oept_14<=(one);
 
 jed_sum_14<= (((jed_node1) and not(jed_node2) and (jed_node3) and (jed_node4)
 ) or
-((jed_node2) and not(jed_node3) and not(jed_node4)) or
-((jed_node1) and (jed_node2) and not(jed_node4)) or
-((jed_node1) and not(jed_node3) and not(jed_node4)));
+((jed_node1) and (jed_node2) and not(jed_node3) and (jed_node4)
+) or
+(not(jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
+) or
+((jed_node1) and not(jed_node2) and not(jed_node3) and not(jed_node4)
+));
 
 jed_oept_15<=(one);
 
-jed_sum_15<= (((jed_node1) and (jed_node2) and (jed_node3) and not(jed_node4)
+jed_sum_15<= (((jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
 ) or
-(not(jed_node1) and not(jed_node2) and (jed_node3) and (jed_node4)
-) or
-(not(jed_node2) and not(jed_node3) and not(jed_node4)
-));
+(not(jed_node1) and (jed_node3) and (jed_node4)) or
+((jed_node1) and (jed_node2) and (jed_node4)) or
+(not(jed_node1) and (jed_node2) and (jed_node3)));
 
 jed_oept_16<=(one);
 
-jed_sum_16<= (((jed_node2) and not(jed_node3) and not(jed_node4)) or
-((jed_node1) and not(jed_node2) and (jed_node3)) or
-(not(jed_node1) and not(jed_node3) and not(jed_node4)
-));
+jed_sum_16<= ((not(jed_node1) and (jed_node2) and not(jed_node3) and not(jed_node4)
+) or
+((jed_node2) and (jed_node3) and (jed_node4)) or
+(not(jed_node1) and (jed_node3) and (jed_node4)));
 
 jed_oept_17<=(one);
 
-jed_sum_17<= (((jed_node1) and (jed_node2) and not(jed_node3) and (jed_node4)
-) or
-((jed_node1) and not(jed_node2) and (jed_node3) and (jed_node4)
+jed_sum_17<= ((not(jed_node1) and (jed_node2) and not(jed_node3) and (jed_node4)
 ) or
 (not(jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
-));
-
-jed_oept_21<=(one);
-
-jed_sum_21<= (((jed_node1) and not(jed_node2) and not(jed_node3) and not(jed_node4)
 ) or
-(not(jed_node1) and (jed_node2) and not(jed_node3) and not(jed_node4)
+((jed_node1) and not(jed_node2) and not(jed_node3) and not(jed_node4)
 ) or
-((jed_node3) and (jed_node4)));
+((jed_node1) and (jed_node2) and (jed_node3)));
 
-jed_oept_22<=(one);
+jed_oept_18<=(one);
 
-jed_sum_22<= ((not(jed_node2) and (jed_node3) and not(jed_node4)) or
-((jed_node1) and not(jed_node2) and not(jed_node3)) or
+jed_sum_18<= (((jed_node1) and not(jed_node2) and not(jed_node3)) or
+(not(jed_node2) and (jed_node3) and not(jed_node4)) or
 ((jed_node1) and not(jed_node4)));
 
-jed_oept_23<=(one);
+jed_oept_19<=(one);
 
-jed_sum_23<= (((jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
+jed_sum_19<= (((jed_node1) and not(jed_node2) and (jed_node3) and (jed_node4)
 ) or
-((jed_node1) and (jed_node2) and (jed_node4)) or
-(not(jed_node1) and (jed_node2) and (jed_node3)) or
-(not(jed_node1) and (jed_node3) and (jed_node4)));
+((jed_node1) and (jed_node2) and not(jed_node4)) or
+((jed_node2) and not(jed_node3) and not(jed_node4)) or
+((jed_node1) and not(jed_node3) and not(jed_node4)));
+
+jed_oept_20<=(one);
+
+jed_sum_20<= ((not(jed_node1) and not(jed_node2) and (jed_node3) and (jed_node4)
+) or
+((jed_node1) and (jed_node2) and (jed_node3) and not(jed_node4)
+) or
+(not(jed_node2) and not(jed_node3) and not(jed_node4)
+));
 
 end DSMB;

@@ -1,25 +1,7 @@
 module display ( 
-	a,
-	b,
-	c,
-	d,
-	f,
-	g,
-	h,
-	i,
-	j,
-	k,
-	l
+	e,
+	dis
 	) ;
 
-input  a;
-input  b;
-input  c;
-input  d;
-inout  f;
-inout  g;
-inout  h;
-inout  i;
-inout  j;
-inout  k;
-inout  l;
+input [3:0] e;
+inout [6:0] dis;
