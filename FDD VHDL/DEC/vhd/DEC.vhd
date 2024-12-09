@@ -6,7 +6,7 @@
 
 --    VHDL File: DEC.vhd
 
---    Date: Sun Dec 08 14:33:50 2024
+--    Date: Mon Dec 09 09:03:04 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -114,7 +114,7 @@ jed_node3 <= e(2) ;
 jed_node4 <= e(3) ;
 Mcell_14:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -142,7 +142,7 @@ port map(
 
 Mcell_15:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -170,7 +170,7 @@ port map(
 
 Mcell_16:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -198,7 +198,7 @@ port map(
 
 Mcell_17:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -226,7 +226,7 @@ port map(
 
 Mcell_18:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -254,7 +254,7 @@ port map(
 
 Mcell_19:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -282,7 +282,7 @@ port map(
 
 Mcell_20:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -310,7 +310,7 @@ port map(
 
 Mcell_21:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -338,7 +338,7 @@ port map(
 
 Mcell_22:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -366,7 +366,7 @@ port map(
 
 Mcell_23:c22v10m
 generic map(comb,
-   ninv,
+   invt,
    xpin,
    	25 ns, --tpd
 	25 ns, --tea
@@ -396,61 +396,87 @@ jed_node25<=jed_sum_25;
 jed_node26<=jed_sum_26;
 jed_oept_14<=(one);
 
-jed_sum_14<= (((jed_node1) and not(jed_node2) and not(jed_node3) and not(jed_node4)
+jed_sum_14<= ((not(jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
 ) or
-((jed_node1) and (jed_node2) and (jed_node4)) or
-((jed_node3) and (jed_node4)));
+(not(jed_node1) and not(jed_node2) and not(jed_node4)
+) or
+(not(jed_node3) and not(jed_node4)));
 
 jed_oept_15<=(one);
 
-jed_sum_15<= ((not(jed_node1) and (jed_node2) and not(jed_node3) and not(jed_node4)
+jed_sum_15<= ((not(jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
 ) or
-((jed_node1) and (jed_node2) and (jed_node4)) or
-((jed_node3) and (jed_node4)));
+((jed_node1) and not(jed_node2) and (jed_node3) and (jed_node4)
+) or
+(not(jed_node1) and not(jed_node2) and not(jed_node4)
+) or
+((jed_node2) and not(jed_node3) and not(jed_node4)));
 
 jed_oept_16<=(one);
 
-jed_sum_16<= (((jed_node1) and (jed_node2) and not(jed_node3)) or
-((jed_node3) and (jed_node4)));
+jed_sum_16<= ((not(jed_node1) and not(jed_node2) and not(jed_node4)
+) or
+((jed_node2) and not(jed_node3) and not(jed_node4)) or
+(not(jed_node1) and (jed_node3) and (jed_node4)));
 
 jed_oept_17<=(one);
 
-jed_sum_17<= (((jed_node1) and (jed_node2) and (jed_node4)) or
-(not(jed_node1) and not(jed_node2) and (jed_node3)) or
-((jed_node3) and (jed_node4)));
+jed_sum_17<= ((not(jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
+) or
+(not(jed_node1) and not(jed_node2) and not(jed_node4)
+) or
+((jed_node2) and not(jed_node3) and not(jed_node4)) or
+((jed_node1) and (jed_node2) and not(jed_node3)));
 
 jed_oept_18<=(one);
 
-jed_sum_18<= (((jed_node1) and (jed_node2) and (jed_node4)) or
-((jed_node1) and not(jed_node2) and (jed_node3)) or
-((jed_node3) and (jed_node4)));
+jed_sum_18<= ((not(jed_node1) and (jed_node2) and (jed_node4)) or
+(not(jed_node1) and not(jed_node2) and not(jed_node4)
+) or
+((jed_node2) and not(jed_node3) and not(jed_node4)));
 
 jed_oept_19<=(one);
 
-jed_sum_19<= (((jed_node1) and (jed_node2) and (jed_node4)) or
-(not(jed_node1) and (jed_node2) and (jed_node3)) or
-((jed_node3) and (jed_node4)));
+jed_sum_19<= ((not(jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
+) or
+((jed_node1) and not(jed_node2) and not(jed_node3) and (jed_node4)
+) or
+((jed_node2) and not(jed_node3) and not(jed_node4)) or
+(not(jed_node1) and not(jed_node2) and not(jed_node4)
+));
 
 jed_oept_20<=(one);
 
-jed_sum_20<= (((jed_node1) and (jed_node2) and (jed_node4)) or
-((jed_node1) and (jed_node2) and (jed_node3)) or
-((jed_node3) and (jed_node4)));
+jed_sum_20<= ((not(jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
+) or
+((jed_node2) and not(jed_node3) and not(jed_node4)) or
+(not(jed_node1) and not(jed_node2) and not(jed_node4)
+) or
+(not(jed_node1) and not(jed_node2) and not(jed_node3)
+));
 
 jed_oept_21<=(one);
 
-jed_sum_21<= (((jed_node1) and (jed_node2) and (jed_node4)) or
-(not(jed_node1) and not(jed_node2) and (jed_node4)) or
-((jed_node3) and (jed_node4)));
+jed_sum_21<= ((not(jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
+) or
+((jed_node2) and not(jed_node3) and not(jed_node4)) or
+((jed_node1) and (jed_node2) and not(jed_node4)) or
+(not(jed_node1) and not(jed_node2) and not(jed_node4)
+));
 
 jed_oept_22<=(one);
 
-jed_sum_22<= (((jed_node3) and (jed_node4)) or
-((jed_node1) and (jed_node4)));
+jed_sum_22<= (((jed_node2) and not(jed_node3) and not(jed_node4)) or
+(not(jed_node1) and (jed_node2) and (jed_node3)) or
+(not(jed_node1) and not(jed_node4)));
 
 jed_oept_23<=(one);
 
-jed_sum_23<= (((jed_node3) and (jed_node4)) or
-((jed_node2) and (jed_node4)));
+jed_sum_23<= ((not(jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
+) or
+(not(jed_node2) and (jed_node3) and not(jed_node4)) or
+((jed_node2) and not(jed_node3) and not(jed_node4)) or
+(not(jed_node1) and not(jed_node3) and not(jed_node4)
+));
 
 end DSMB;
