@@ -1,0 +1,6 @@
+sumador.vhd #Entity sc 5
+sumador.vhd #Architecture sc_arc sc 15
+resta.vhd #Entity resta 4
+resta.vhd #Architecture aresta resta 11
+main.vhd #Entity sum_res 4
+main.vhd #Architecture asum_res sum_res 18
