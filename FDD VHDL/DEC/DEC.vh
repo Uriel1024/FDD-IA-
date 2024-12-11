@@ -3,5 +3,5 @@ module dec (
 	d
 	) ;
 
-input [3:0] e;
+input [4:0] e;
 inout [9:0] d;
