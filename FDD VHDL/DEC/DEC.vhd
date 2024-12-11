@@ -10,9 +10,9 @@
 			D : out std_logic_vector(9 downto 0)
 		);
 		attribute pin_numbers of DEC: entity is 
-		" E(0):1 E(1):2 E(2):3 E(3):4 " 
+		" E(0):1 E(1):2 E(2):3 E(3):4 E(4):5 " 
 		& " D(0):14 D(1):15 D(2):16 D(3):17 D(4):18 "
-		& "D(5):19 D(6):20 D(7):21 D(8):22 ";
+		& "D(5):19 D(6):20 D(7):21 D(8):22 D(9):23 ";
 	END ;
 	
 	
