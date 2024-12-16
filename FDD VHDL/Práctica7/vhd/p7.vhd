@@ -6,7 +6,7 @@
 
 --    VHDL File: p7.vhd
 
---    Date: Mon Dec 16 09:21:50 2024
+--    Date: Mon Dec 16 10:34:52 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -34,10 +34,10 @@ END sumadordosbits;
 
 ARCHITECTURE DSMB of sumadordosbits is
 
-	signal jed_node1	: std_logic:='0' ; -- b(1)
-	signal jed_node2	: std_logic:='0' ; -- b(0)
-	signal jed_node3	: std_logic:='0' ; -- a(1)
-	signal jed_node4	: std_logic:='0' ; -- a(0)
+	signal jed_node1	: std_logic:='0' ; -- a(0)
+	signal jed_node2	: std_logic:='0' ; -- a(1)
+	signal jed_node3	: std_logic:='0' ; -- b(0)
+	signal jed_node4	: std_logic:='0' ; -- b(1)
 	signal jed_node5	: std_logic:='0' ;
 	signal jed_node6	: std_logic:='0' ;
 	signal jed_node7	: std_logic:='0' ;
@@ -61,16 +61,16 @@ ARCHITECTURE DSMB of sumadordosbits is
 SIGNAL  one:std_logic:='1';
 SIGNAL  zero:std_logic:='0';
 SIGNAL  jed_oept_1:std_logic:='0';
---Attribute PIN_NUMBERS of b(1):SIGNAL is "0001";
+--Attribute PIN_NUMBERS of a(0):SIGNAL is "0001";
 
 SIGNAL  jed_oept_2:std_logic:='0';
---Attribute PIN_NUMBERS of b(0):SIGNAL is "0002";
+--Attribute PIN_NUMBERS of a(1):SIGNAL is "0002";
 
 SIGNAL  jed_oept_3:std_logic:='0';
---Attribute PIN_NUMBERS of a(1):SIGNAL is "0003";
+--Attribute PIN_NUMBERS of b(0):SIGNAL is "0003";
 
 SIGNAL  jed_oept_4:std_logic:='0';
---Attribute PIN_NUMBERS of a(0):SIGNAL is "0004";
+--Attribute PIN_NUMBERS of b(1):SIGNAL is "0004";
 
 SIGNAL  jed_oept_14:std_logic:='0';
 SIGNAL  jed_sum_14,jed_fb_14:std_logic:='0';
@@ -90,10 +90,10 @@ SIGNAL  jed_oept_26:std_logic:='0';
 SIGNAL  jed_node26,jed_sum_26:std_logic:='0';
 
 BEGIN
-jed_node1 <= b(1) ;
-jed_node2 <= b(0) ;
-jed_node3 <= a(1) ;
-jed_node4 <= a(0) ;
+jed_node1 <= a(0) ;
+jed_node2 <= a(1) ;
+jed_node3 <= b(0) ;
+jed_node4 <= b(1) ;
 Mcell_14:c22v10m
 generic map(comb,
    ninv,
@@ -182,24 +182,24 @@ jed_node25<=jed_sum_25;
 jed_node26<=jed_sum_26;
 jed_oept_14<=(one);
 
-jed_sum_14<= (((jed_node2) and not(jed_node4)) or
-(not(jed_node2) and (jed_node4)));
+jed_sum_14<= ((not(jed_node1) and (jed_node3)) or
+((jed_node1) and not(jed_node3)));
 
 jed_oept_15<=(one);
 
 jed_sum_15<= (((jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
 ) or
-(not(jed_node1) and (jed_node2) and not(jed_node3) and (jed_node4)
+((jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
 ) or
-((jed_node1) and not(jed_node3) and not(jed_node4)) or
-((jed_node1) and not(jed_node2) and not(jed_node3)) or
-(not(jed_node1) and (jed_node3) and not(jed_node4)) or
-(not(jed_node1) and not(jed_node2) and (jed_node3)));
+(not(jed_node1) and not(jed_node2) and (jed_node4)) or
+(not(jed_node2) and not(jed_node3) and (jed_node4)) or
+(not(jed_node1) and (jed_node2) and not(jed_node4)) or
+((jed_node2) and not(jed_node3) and not(jed_node4)));
 
 jed_oept_16<=(one);
 
-jed_sum_16<= (((jed_node1) and (jed_node2) and (jed_node4)) or
-((jed_node2) and (jed_node3) and (jed_node4)) or
-((jed_node1) and (jed_node3)));
+jed_sum_16<= (((jed_node1) and (jed_node3) and (jed_node4)) or
+((jed_node1) and (jed_node2) and (jed_node3)) or
+((jed_node2) and (jed_node4)));
 
 end DSMB;

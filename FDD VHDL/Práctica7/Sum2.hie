@@ -1,7 +1,7 @@
 p7.vhd #Entity sumadordosbits 5
-p7.vhd #Architecture arch_sumadordosbits sumadordosbits 18
-p7.vhd #Instance ha ms 46
-p7.vhd #Instance fa sc 54
+p7.vhd #Architecture arch_sumadordosbits sumadordosbits 20
+p7.vhd #Instance ha ms 48
+p7.vhd #Instance fa sc 56
 SC.vhd #Entity sc 5
 SC.vhd #Architecture arch_sc sc 15
 MS.vhd #Entity ms 4

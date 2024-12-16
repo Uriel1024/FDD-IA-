@@ -10,8 +10,10 @@ entity SumadorDosBits is
         Sum   : out STD_LOGIC_VECTOR(1 downto 0); 
         Cout  : out STD_LOGIC         
     );
+
     attribute pin_numbers of SumadorDosBits: entity is
-	"Sum(0):14 Sum(1):15 Cout:16 ";
+	"Sum(0):14 Sum(1):15 Cout:16 "
+	& "A(0):1 A(1):2 B(0):3 B(0):4 ";
 
 end SumadorDosBits;
 
