@@ -6,7 +6,7 @@
 
 --    VHDL File: cod.vhd
 
---    Date: Sat Dec 14 16:53:41 2024
+--    Date: Mon Dec 16 11:17:25 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -235,9 +235,10 @@ jed_sum_14<= (((jed_node2) and not(jed_node3) and not(jed_node5) and not(jed_nod
 
 jed_oept_15<=(one);
 
-jed_sum_15<= ((not(jed_node3) and not(jed_node4) and not(jed_node5)
- and not(jed_node7) and not(jed_node8)) or
-((jed_node6) and not(jed_node7) and not(jed_node8)));
+jed_sum_15<= ((not(jed_node3) and not(jed_node4) and not(jed_node7)
+ and not(jed_node8)) or
+((jed_node6) and not(jed_node7) and not(jed_node8)) or
+((jed_node5) and not(jed_node7) and not(jed_node8)));
 
 jed_oept_16<=(one);
 

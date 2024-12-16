@@ -1,7 +1,7 @@
 library IEEE;
 use ieee.std_logic_1164.all;
 
-entity cod is 
+	entity cod is 
 port(
 	e : in std_logic_vector(7 downto 0);
 	s : out std_logic_vector(2 downto 0);	
@@ -30,7 +30,7 @@ begin
 			s <= "101";
 			y <= '0';
 		elsif(e(4) = '1') then
-			s <= "110";
+			s <= "100";
 			y <= '0';
 		elsif(e(3) = '1') then
 			s <= "011";
