@@ -1,9 +1,0 @@
-ENTITY resta IS
-    PORT (
-	a : in std_logic  ; 
-	b : in std_logic  ; 
-	pi : in std_logic  ; 
-	resta : inout std_logic  ; 
-	po : inout std_logic 
-    ) ;
-END resta ;

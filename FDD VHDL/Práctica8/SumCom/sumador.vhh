@@ -1,9 +1,0 @@
-ENTITY sc IS
-    PORT (
-	a : in std_logic  ; 
-	b : in std_logic  ; 
-	cin : in std_logic  ; 
-	sum : inout std_logic  ; 
-	co : inout std_logic 
-    ) ;
-END sc ;

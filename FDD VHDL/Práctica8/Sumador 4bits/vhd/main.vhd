@@ -6,7 +6,7 @@
 
 --    VHDL File: main.vhd
 
---    Date: Tue Dec 10 15:32:31 2024
+--    Date: Wed Dec 18 10:04:46 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -22,10 +22,13 @@ use primitive.primitive.all;
 
 ENTITY sum_res IS
     PORT (
+	                  c1 :    in std_logic ;
+	                  op :    in std_logic ;
 	                   a :    in std_logic_vector (3 downto 0) ;
 	                   b :    in std_logic_vector (3 downto 0) ;
 	                   s : inout std_logic_vector (3 downto 0) ;
-	                cout : inout std_logic
+	                cout : inout std_logic ;
+	                 sel : inout std_logic
     );
 END sum_res;
 
@@ -41,12 +44,11 @@ ARCHITECTURE DSMB of sum_res is
 	signal jed_node6	: std_logic:='0' ; -- b(1)
 	signal jed_node7	: std_logic:='0' ; -- b(2)
 	signal jed_node8	: std_logic:='0' ; -- b(3)
-	signal jed_node9	: std_logic:='0' ;
-	signal jed_node10	: std_logic:='0' ;
+	signal jed_node9	: std_logic:='0' ; -- op
+	signal jed_node10	: std_logic:='0' ; -- c1
 	signal jed_node11	: std_logic:='0' ;
 	signal jed_node12	: std_logic:='0' ;
 	signal jed_node13	: std_logic:='0' ;
-	signal jed_node19	: std_logic:='0' ;
 	signal jed_node20	: std_logic:='0' ;
 	signal jed_node21	: std_logic:='0' ;
 	signal jed_node22	: std_logic:='0' ;
@@ -81,6 +83,12 @@ SIGNAL  jed_oept_7:std_logic:='0';
 SIGNAL  jed_oept_8:std_logic:='0';
 --Attribute PIN_NUMBERS of b(3):SIGNAL is "0008";
 
+SIGNAL  jed_oept_9:std_logic:='0';
+--Attribute PIN_NUMBERS of op:SIGNAL is "0009";
+
+SIGNAL  jed_oept_10:std_logic:='0';
+--Attribute PIN_NUMBERS of c1:SIGNAL is "0010";
+
 SIGNAL  jed_oept_14:std_logic:='0';
 SIGNAL  jed_sum_14,jed_fb_14:std_logic:='0';
 --Attribute PIN_NUMBERS of s(0):SIGNAL is "0014";
@@ -101,8 +109,17 @@ SIGNAL  jed_oept_18:std_logic:='0';
 SIGNAL  jed_sum_18,jed_fb_18:std_logic:='0';
 --Attribute PIN_NUMBERS of cout:SIGNAL is "0018";
 
-SIGNAL  jed_oept_21:std_logic:='0';
+SIGNAL  jed_oept_19:std_logic:='0';
+SIGNAL  jed_sum_19,jed_fb_19:std_logic:='0';
+--Attribute PIN_NUMBERS of sel:SIGNAL is "0019";
+
+SIGNAL  jed_oept_20:std_logic:='0';
 SIGNAL c_0:std_logic:='0';
+SIGNAL  jed_sum_20,jed_fb_20:std_logic:='0';
+--Attribute PIN_NUMBERS of jed_node20:SIGNAL is "0020";
+
+SIGNAL  jed_oept_21:std_logic:='0';
+SIGNAL c_3:std_logic:='0';
 SIGNAL  jed_sum_21,jed_fb_21:std_logic:='0';
 --Attribute PIN_NUMBERS of jed_node21:SIGNAL is "0021";
 
@@ -130,6 +147,8 @@ jed_node5 <= b(0) ;
 jed_node6 <= b(1) ;
 jed_node7 <= b(2) ;
 jed_node8 <= b(3) ;
+jed_node9 <= op ;
+jed_node10 <= c1 ;
 Mcell_14:c22v10m
 generic map(comb,
    ninv,
@@ -270,6 +289,62 @@ port map(
      fb=>jed_fb_18
    );
 
+Mcell_19:c22v10m
+generic map(comb,
+   ninv,
+   xpin,
+   	25 ns, --tpd
+	25 ns, --tea
+	25 ns, --ter
+	15 ns, --tco
+	18 ns, --ts
+	0 ns, --th
+	14 ns, --twh
+	14 ns, --twl
+	13 ns, --tcf
+	25 ns, --taw
+	25 ns, --tar
+	25 ns, --tap
+	25 ns  --tspr
+)
+port map(
+     d=>jed_sum_19,
+     clk=>jed_node1,
+     oe=>jed_oept_19,
+     ss=>jed_sum_26,
+     ar=>jed_sum_25,
+     y=>sel,
+     fb=>jed_fb_19
+   );
+
+Mcell_20:c22v10m
+generic map(comb,
+   ninv,
+   xpin,
+   	25 ns, --tpd
+	25 ns, --tea
+	25 ns, --ter
+	15 ns, --tco
+	18 ns, --ts
+	0 ns, --th
+	14 ns, --twh
+	14 ns, --twl
+	13 ns, --tcf
+	25 ns, --taw
+	25 ns, --tar
+	25 ns, --tap
+	25 ns  --tspr
+)
+port map(
+     d=>jed_sum_20,
+     clk=>jed_node1,
+     oe=>jed_oept_20,
+     ss=>jed_sum_26,
+     ar=>jed_sum_25,
+     y=>jed_node20,
+     fb=>jed_fb_20
+   );
+
 Mcell_21:c22v10m
 generic map(comb,
    ninv,
@@ -354,57 +429,123 @@ port map(
      fb=>jed_fb_23
    );
 
-c_0 <= jed_fb_21;
+c_0 <= jed_fb_20;
+c_3 <= jed_fb_21;
 c_1 <= jed_fb_22;
 c_2 <= jed_fb_23;
 jed_node25<=jed_sum_25;
 jed_node26<=jed_sum_26;
 jed_oept_14<=(one);
 
-jed_sum_14<= ((not(jed_node1) and (jed_node5)) or
-((jed_node1) and not(jed_node5)));
+jed_sum_14<= (((jed_node1) and (jed_node5) and (jed_node9) and (jed_node10)
+) or
+(not(jed_node1) and not(jed_node5) and (jed_node9) and (jed_node10)
+) or
+(not(jed_node1) and (jed_node5) and not(jed_node10)
+) or
+((jed_node1) and not(jed_node5) and not(jed_node10)
+) or
+(not(jed_node1) and (jed_node5) and not(jed_node9)) or
+((jed_node1) and not(jed_node5) and not(jed_node9)));
 
 jed_oept_15<=(one);
 
-jed_sum_15<= (((jed_node2) and (jed_fb_21) and (jed_node6)) or
-(not(jed_node2) and (jed_fb_21) and not(jed_node6)) or
-(not(jed_node2) and not(jed_fb_21) and (jed_node6)) or
-((jed_node2) and not(jed_fb_21) and not(jed_node6)));
+jed_sum_15<= (((jed_node2) and (jed_fb_22) and (jed_node6) and (jed_node9)
+) or
+(not(jed_node2) and (jed_fb_22) and not(jed_node6) and (jed_node9)
+) or
+(not(jed_node2) and not(jed_fb_22) and (jed_node6) and (jed_node9)
+) or
+((jed_node2) and not(jed_fb_22) and not(jed_node6) and (jed_node9)
+) or
+((jed_node2) and (jed_fb_20) and (jed_node6) and not(jed_node9)
+) or
+(not(jed_node2) and (jed_fb_20) and not(jed_node6) and not(jed_node9)
+) or
+(not(jed_node2) and not(jed_fb_20) and (jed_node6) and not(jed_node9)
+) or
+((jed_node2) and not(jed_fb_20) and not(jed_node6) and not(jed_node9)
+));
 
 jed_oept_16<=(one);
 
-jed_sum_16<= (((jed_fb_22) and (jed_node3) and (jed_node7)) or
-((jed_fb_22) and not(jed_node3) and not(jed_node7)) or
-(not(jed_fb_22) and not(jed_node3) and (jed_node7)) or
-(not(jed_fb_22) and (jed_node3) and not(jed_node7)));
+jed_sum_16<= (((jed_fb_23) and (jed_node3) and (jed_node7) and (jed_node9)
+) or
+((jed_fb_23) and not(jed_node3) and not(jed_node7) and (jed_node9)
+) or
+(not(jed_fb_23) and not(jed_node3) and (jed_node7) and (jed_node9)
+) or
+(not(jed_fb_23) and (jed_node3) and not(jed_node7) and (jed_node9)
+) or
+((jed_fb_22) and (jed_node3) and (jed_node7) and not(jed_node9)
+) or
+((jed_fb_22) and not(jed_node3) and not(jed_node7) and not(jed_node9)
+) or
+(not(jed_fb_22) and not(jed_node3) and (jed_node7) and not(jed_node9)
+) or
+(not(jed_fb_22) and (jed_node3) and not(jed_node7) and not(jed_node9)
+));
 
 jed_oept_17<=(one);
 
-jed_sum_17<= (((jed_fb_23) and (jed_node4) and (jed_node8)) or
-((jed_fb_23) and not(jed_node4) and not(jed_node8)) or
-(not(jed_fb_23) and not(jed_node4) and (jed_node8)) or
-(not(jed_fb_23) and (jed_node4) and not(jed_node8)));
+jed_sum_17<= (((jed_fb_21) and (jed_node4) and (jed_node8) and (jed_node9)
+) or
+((jed_fb_21) and not(jed_node4) and not(jed_node8) and (jed_node9)
+) or
+(not(jed_fb_21) and not(jed_node4) and (jed_node8) and (jed_node9)
+) or
+(not(jed_fb_21) and (jed_node4) and not(jed_node8) and (jed_node9)
+) or
+((jed_fb_23) and (jed_node4) and (jed_node8) and not(jed_node9)
+) or
+((jed_fb_23) and not(jed_node4) and not(jed_node8) and not(jed_node9)
+) or
+(not(jed_fb_23) and not(jed_node4) and (jed_node8) and not(jed_node9)
+) or
+(not(jed_fb_23) and (jed_node4) and not(jed_node8) and not(jed_node9)
+));
 
 jed_oept_18<=(one);
 
-jed_sum_18<= (((jed_fb_23) and (jed_node8)) or
-((jed_fb_23) and (jed_node4)) or
-((jed_node4) and (jed_node8)));
+jed_sum_18<= (((jed_fb_21) and (jed_node8) and (jed_node9)) or
+((jed_fb_21) and not(jed_node4) and (jed_node9)) or
+(not(jed_node4) and (jed_node8) and (jed_node9)) or
+((jed_fb_23) and (jed_node8) and not(jed_node9)) or
+((jed_fb_23) and (jed_node4) and not(jed_node9)) or
+((jed_node4) and (jed_node8) and not(jed_node9)));
+
+jed_oept_19<=(one);
+
+jed_sum_19<= (((jed_node9)));
+
+jed_oept_20<=(one);
+
+jed_sum_20<= (((jed_node1) and (jed_node5) and not(jed_node9)) or
+((jed_fb_20) and (jed_node9)));
 
 jed_oept_21<=(one);
 
-jed_sum_21<= (((jed_node1) and (jed_node5)));
+jed_sum_21<= (((jed_fb_23) and (jed_node7) and (jed_node9)) or
+((jed_fb_23) and not(jed_node3) and (jed_node9)) or
+(not(jed_node3) and (jed_node7) and (jed_node9)) or
+((jed_fb_21) and not(jed_node9)));
 
 jed_oept_22<=(one);
 
-jed_sum_22<= (((jed_fb_21) and (jed_node6)) or
-((jed_node2) and (jed_fb_21)) or
-((jed_node2) and (jed_node6)));
+jed_sum_22<= (((jed_node5) and (jed_node9) and (jed_node10)) or
+(not(jed_node1) and (jed_node9) and (jed_node10)) or
+(not(jed_node1) and (jed_node5) and (jed_node9)) or
+((jed_fb_20) and (jed_node6) and not(jed_node9)) or
+((jed_node2) and (jed_fb_20) and not(jed_node9)) or
+((jed_node2) and (jed_node6) and not(jed_node9)));
 
 jed_oept_23<=(one);
 
-jed_sum_23<= (((jed_fb_22) and (jed_node7)) or
-((jed_fb_22) and (jed_node3)) or
-((jed_node3) and (jed_node7)));
+jed_sum_23<= (((jed_fb_22) and (jed_node6) and (jed_node9)) or
+(not(jed_node2) and (jed_fb_22) and (jed_node9)) or
+(not(jed_node2) and (jed_node6) and (jed_node9)) or
+((jed_fb_22) and (jed_node7) and not(jed_node9)) or
+((jed_fb_22) and (jed_node3) and not(jed_node9)) or
+((jed_node3) and (jed_node7) and not(jed_node9)));
 
 end DSMB;
