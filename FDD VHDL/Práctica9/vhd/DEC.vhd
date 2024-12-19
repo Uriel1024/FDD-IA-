@@ -6,7 +6,7 @@
 
 --    VHDL File: DEC.vhd
 
---    Date: Tue Dec 10 20:12:26 2024
+--    Date: Wed Dec 18 16:13:21 2024
 
 --  Disassembly from Jedec file for: c22v10
 
@@ -400,83 +400,67 @@ jed_node25<=jed_sum_25;
 jed_node26<=jed_sum_26;
 jed_oept_14<=(one);
 
-jed_sum_14<= (((jed_node1) and not(jed_node2) and not(jed_node3) and (jed_node4)
-) or
-((jed_node1) and (jed_node2) and (jed_node3) and not(jed_node5)
-) or
-((jed_node4) and not(jed_node5)));
+jed_sum_14<= ((not(jed_node1)));
 
 jed_oept_15<=(one);
 
-jed_sum_15<= ((not(jed_node1) and not(jed_node2) and not(jed_node3)
- and (jed_node4)) or
-(not(jed_node1) and (jed_node2) and (jed_node3) and not(jed_node5)
-) or
-((jed_node4) and not(jed_node5)));
+jed_sum_15<= ((not(jed_node1) and (jed_node2) and not(jed_node3) and not(jed_node4)
+ and not(jed_node5)) or
+(not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)));
 
 jed_oept_16<=(one);
 
-jed_sum_16<= (((jed_node1) and (jed_node2) and (jed_node3) and not(jed_node4)
+jed_sum_16<= ((not(jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
 ) or
-((jed_node3) and (jed_node4) and not(jed_node5)) or
-((jed_node2) and (jed_node4) and not(jed_node5)) or
-((jed_node2) and (jed_node3) and not(jed_node5)) or
-((jed_node1) and (jed_node4) and not(jed_node5)));
+(not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)));
 
 jed_oept_17<=(one);
 
 jed_sum_17<= ((not(jed_node1) and (jed_node2) and (jed_node3) and not(jed_node4)
 ) or
-((jed_node3) and (jed_node4) and not(jed_node5)) or
-((jed_node2) and (jed_node4) and not(jed_node5)) or
-((jed_node2) and (jed_node3) and not(jed_node5)) or
-(not(jed_node1) and (jed_node4) and not(jed_node5)));
+(not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)));
 
 jed_oept_18<=(one);
 
-jed_sum_18<= (((jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
- and (jed_node5)) or
-((jed_node2) and (jed_node3) and not(jed_node5)) or
-((jed_node1) and (jed_node4) and not(jed_node5)) or
-(not(jed_node2) and (jed_node4) and not(jed_node5)));
+jed_sum_18<= ((not(jed_node1) and not(jed_node2) and not(jed_node3)
+ and (jed_node4)) or
+(not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)));
 
 jed_oept_19<=(one);
 
-jed_sum_19<= ((not(jed_node1) and not(jed_node2) and (jed_node3) and not(jed_node4)
- and (jed_node5)) or
-((jed_node2) and (jed_node3) and not(jed_node5)) or
-(not(jed_node1) and (jed_node4) and not(jed_node5)) or
-(not(jed_node2) and (jed_node4) and not(jed_node5)));
+jed_sum_19<= ((not(jed_node1) and (jed_node2) and not(jed_node3) and (jed_node4)
+) or
+(not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)));
 
 jed_oept_20<=(one);
 
-jed_sum_20<= (((jed_node1) and (jed_node2) and not(jed_node3) and not(jed_node4)
- and (jed_node5)) or
-((jed_node2) and (jed_node3) and not(jed_node5)) or
-((jed_node1) and (jed_node4) and not(jed_node5)) or
-(not(jed_node3) and (jed_node4) and not(jed_node5)));
+jed_sum_20<= ((not(jed_node1) and not(jed_node2) and (jed_node3) and (jed_node4)
+) or
+(not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)));
 
 jed_oept_21<=(one);
 
-jed_sum_21<= ((not(jed_node1) and (jed_node2) and not(jed_node3) and not(jed_node4)
- and (jed_node5)) or
-((jed_node2) and (jed_node3) and not(jed_node5)) or
-(not(jed_node1) and (jed_node4) and not(jed_node5)) or
-(not(jed_node3) and (jed_node4) and not(jed_node5)));
+jed_sum_21<= ((not(jed_node1) and (jed_node2) and (jed_node3) and (jed_node4)
+) or
+(not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)));
 
 jed_oept_22<=(one);
 
-jed_sum_22<= (((jed_node1) and not(jed_node2) and not(jed_node3) and not(jed_node4)
- and (jed_node5)) or
-((jed_node2) and (jed_node3) and not(jed_node4) and not(jed_node5)
-) or
-(not(jed_node3) and (jed_node4) and not(jed_node5)) or
-((jed_node1) and (jed_node4) and not(jed_node5)) or
-(not(jed_node2) and (jed_node4) and not(jed_node5)));
+jed_sum_22<= ((not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)) or
+(not(jed_node1) and not(jed_node2) and (jed_node5)));
 
 jed_oept_23<=(one);
 
-jed_sum_23<= ((not(jed_node2) and not(jed_node3) and (jed_node5)) or
-(not(jed_node4) and (jed_node5)));
+jed_sum_23<= ((not(jed_node1) and (jed_node4) and (jed_node5)) or
+(not(jed_node1) and (jed_node3) and (jed_node5)) or
+(not(jed_node1) and (jed_node2) and (jed_node5)));
 
 end DSMB;
