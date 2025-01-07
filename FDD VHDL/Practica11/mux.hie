@@ -1,0 +1,2 @@
+mux.vhd #Entity mux_8a1 4
+mux.vhd #Architecture amux_8a1 mux_8a1 15
