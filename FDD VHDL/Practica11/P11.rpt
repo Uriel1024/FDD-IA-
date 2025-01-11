@@ -17,38 +17,38 @@ Options:    -m -yu -e10 -w100 -o2 -ygs -fP -v10 -dc22v10 -ppalce22v10-25pc/pi -a
 ======================================================================
 
 vhdlfe V6.3 IR 35:  VHDL parser
-Wed Dec 18 05:44:47 2024
+Fri Jan 10 09:02:20 2025
 
 Library 'work' => directory 'lc22v10'
-Linking 'C:\ARCHIV~1\Cypress\Warp\bin\std.vhd'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\cypress.vhd'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\work\cypress.vif'.
-Library 'ieee' => directory 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work'
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\common\work\cypress.vif'.
+Library 'ieee' => directory 'C:\Program Files (x86)\Cypress\Warp\lib\ieee\work'
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
 
 vhdlfe:  No errors.
 
 
 tovif V6.3 IR 35:  High-level synthesis
-Wed Dec 18 05:44:47 2024
+Fri Jan 10 09:02:20 2025
 
-Linking 'C:\ARCHIV~1\Cypress\Warp\bin\std.vhd'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\cypress.vhd'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\work\cypress.vif'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
 
 tovif:  No errors.
 
 
 topld V6.3 IR 35:  Synthesis and optimization
-Wed Dec 18 05:44:47 2024
+Fri Jan 10 09:02:20 2025
 
-Linking 'C:\ARCHIV~1\Cypress\Warp\bin\std.vhd'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\cypress.vhd'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\common\work\cypress.vif'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\ARCHIV~1\Cypress\Warp\lib\lc22v10\stdlogic\c22v10.vif'.
-Linking 'C:\Documents and Settings\SaraniliF\Escritorio\FDD\P11-MUX\lc22v10\mux_8-1.vif'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\bin\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\Warp\lib\lc22v10\stdlogic\c22v10.vif'.
+Linking 'C:\users\uriel\Documents\FDD-IA-\FDD VHDL\Practica11\lc22v10\mux_8-1.vif'.
 
 ----------------------------------------------------------
 Detecting unused logic.
@@ -82,7 +82,7 @@ topld:  No errors.
 ----------------------------------------------------------------------------
 PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-DESIGN HEADER INFORMATION  (05:44:48)
+DESIGN HEADER INFORMATION  (09:02:21)
 
 Input File(s): P11.pla
 Device       : C22V10
@@ -101,7 +101,7 @@ Completed Successfully
 ----------------------------------------------------------------------------
 PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-OPTIMIZATION OPTIONS       (05:44:48)
+OPTIMIZATION OPTIONS       (09:02:21)
 
 Messages:
   Information: Optimizing logic using best output polarity for signals:
@@ -128,7 +128,7 @@ Completed Successfully
 ----------------------------------------------------------------------------
 PLD Optimizer Software:       DSGNOPT.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-OPTIMIZATION OPTIONS       (05:44:48)
+OPTIMIZATION OPTIONS       (09:02:21)
 
 Messages:
   Information: Optimizing Banked Preset/Reset requirements.
@@ -142,7 +142,7 @@ Completed Successfully
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
 <CYPRESSTAG name="Equations" icon=FILE_RPT_EQUATION>
-DESIGN EQUATIONS           (05:44:48)
+DESIGN EQUATIONS           (09:02:21)
 </CYPRESSTAG>
 
     f =
@@ -156,7 +156,7 @@ Completed Successfully
 ----------------------------------------------------------------------------
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-DESIGN RULE CHECK          (05:44:48)
+DESIGN RULE CHECK          (09:02:21)
 
 Messages:
                  None.
@@ -170,7 +170,7 @@ Completed Successfully
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
 <CYPRESSTAG name="Pinout" icon=FILE_RPT_PINOUT>
-PINOUT INFORMATION   (05:44:48)
+PINOUT INFORMATION   (09:02:21)
 </CYPRESSTAG>
 Messages:
   Information: Checking for duplicate NODE logic.
@@ -202,7 +202,7 @@ Completed Successfully
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
 <CYPRESSTAG name="Utilization" icon=FILE_RPT_UTILIZATION>
-RESOURCE UTILIZATION (05:44:48)
+RESOURCE UTILIZATION (09:02:21)
 </CYPRESSTAG>
   Information: Macrocell Utilization.
 
@@ -238,7 +238,7 @@ Completed Successfully
 ----------------------------------------------------------------------------
 PLD Compiler Software:        PLA2JED.EXE    31/03/2000  [v4.02 ] 6.3 IR 35
 
-JEDEC ASSEMBLE             (05:44:48)
+JEDEC ASSEMBLE             (09:02:21)
 
 Messages:
   Information: Output file 'P11.pin' created.
@@ -252,4 +252,4 @@ Messages:
 Summary:
                  Error Count = 0      Warning Count = 0
 
-Completed Successfully at 05:44:48
+Completed Successfully at 09:02:21

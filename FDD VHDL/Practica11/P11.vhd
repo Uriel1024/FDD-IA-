@@ -3,7 +3,6 @@ use ieee.std_logic_1164.all;
 
 entity P11_MUX is port (
 	A,B,C,D,X,Y,Z: in std_logic;
---	S_BCD: in std_logic_vector (0 to 2);
 	F : out std_logic);
 end P11_MUX;
 
